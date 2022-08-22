@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace survey
-{
+{//why is this so long raghhhhh
     internal class Program
     {
         static void Main(string[] args)
