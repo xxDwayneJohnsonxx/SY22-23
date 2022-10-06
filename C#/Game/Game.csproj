@@ -49,6 +49,7 @@
     <Compile Include="Ball.cs" />
     <Compile Include="Canvas.cs" />
     <Compile Include="Chaser.cs" />
+    <Compile Include="EvilSean.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

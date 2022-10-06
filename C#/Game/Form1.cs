@@ -15,20 +15,22 @@ namespace Game
     {
         public Canvas c = null;
         Sprite p1;
-        Chaser p2;
-        Ball b1;
-
+        EvilSean p2;
+        Chaser b1;
+        Chaser b2;
         public Form1()
         {
 
             InitializeComponent();
             c = new Canvas(this);
             p1 = new Sprite(player);
-            p2 = new Chaser(player2);
-            b1 = new Ball(Ballpicture, 5, 5);
+            p2 = new EvilSean(player2, 2, 2);
+            b1 = new Chaser(chaser1);
+            b2 = new Chaser(chaser2);
             c.Add(p1);
-           // c.Add(p2);
+            c.Add(p2);
             c.Add(b1);
+            c.Add(b2);
         }
         
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -77,18 +79,18 @@ namespace Game
             {
                 PictureBox p = new PictureBox();
                 p.Location = player.Location;
-                p.Width = Ballpicture.Width;
-                p.Size = Ballpicture.Size;
-                p.BackColor = Ballpicture.BackColor;
+                p.Width = chaser1.Width;
+                p.Size = chaser1.Size;
+                p.BackColor = chaser1.BackColor;
                 p.Top = player.Location.X;
                 p.Left = player.Location.Y;
-                p.Width = Ballpicture.Width;
-                p.Height = Ballpicture.Height;
-                p.BackColor = Ballpicture.BackColor;
-                p.SizeMode = Ballpicture.SizeMode;
-                if (Ballpicture.Image != null)
-                    p.Image = Ballpicture.Image;
-                p.Name = Ballpicture.Name;
+                p.Width = chaser1.Width;
+                p.Height = chaser1.Height;
+                p.BackColor = chaser1.BackColor;
+                p.SizeMode = chaser1.SizeMode;
+                if (chaser1.Image != null)
+                    p.Image = chaser1.Image;
+                p.Name = chaser1.Name;
                 p.Visible = true;
                 Controls.Add(p);
                 c.Add(new Sprite(p));
@@ -102,9 +104,13 @@ namespace Game
                 progressBar1.Value++;
             // let the canvas do all the work
             c.tick();
+            label1.Text = "score: " + progressBar1.Value * 50;
+            if (progressBar1.Value == progressBar1.Maximum)
+            { 
+                MessageBox.Show("congratulations, you win!");
+                Environment.Exit(0);
+            }
         }
-
-
     }
 
 }

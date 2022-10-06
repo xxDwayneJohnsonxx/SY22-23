@@ -27,7 +27,7 @@ namespace Game
         }
         public virtual void tick()
         {
-            movedown();
+         /*   movedown(); */
         }
         virtual public bool collision(PictureBox other)
         {
