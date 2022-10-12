@@ -21,6 +21,7 @@ namespace Game
             if (other.Name == "player")
             {
                 other.Visible = false;
+                GetForm1();
             }
             return false;
         }

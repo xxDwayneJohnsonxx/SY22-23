@@ -107,7 +107,7 @@ namespace Game
             label1.Text = "score: " + progressBar1.Value * 50;
             if (progressBar1.Value == progressBar1.Maximum)
             { 
-                MessageBox.Show("congratulations, you win!");
+                
                 Environment.Exit(0);
             }
         }
